@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEditor.Animations;
 using Platformer.Components;
 using Platformer.Model;
+using Platformer.Utils;
 
 namespace Platformer.Creatures
 {
@@ -13,6 +14,7 @@ namespace Platformer.Creatures
 
         [SerializeField] private float _interactionRadius;
 
+        [SerializeField] private Cooldown _throwCooldown;
         [SerializeField] private AnimatorController _armed; 
         [SerializeField] private AnimatorController _disarmed;
 
@@ -65,7 +67,6 @@ namespace Platformer.Creatures
 
         protected override float CalculateYVelocity()
         {
-/*            var yVelocity = Rigidbody.velocity.y;*/
             var isJumpPressing = Direction.y > 0;
 
             if (IsGrounded || _isOnWall)
@@ -85,7 +86,6 @@ namespace Platformer.Creatures
             if (!IsGrounded && _allowDoubleJump)
             {
                 _particles.Spawn("Jump");
-/*                yVelocity = _jumpSpeed;*/
                 _allowDoubleJump = false;
                 return _jumpSpeed;
             }
@@ -156,7 +156,11 @@ namespace Platformer.Creatures
 
         public void Throw()
         {
-            Animator.SetTrigger(ThrowKey);
+            if (_throwCooldown.IsReady)
+            {
+                Animator.SetTrigger(ThrowKey);
+                _throwCooldown.Reset();
+            }
         }
     }
 }

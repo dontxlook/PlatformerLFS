@@ -1358,7 +1358,7 @@ MonoBehaviour:
   _tag: Player
   _layer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8192
   _action:
     m_PersistentCalls:
       m_Calls:
@@ -1890,10 +1890,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 266074372, guid: 636b20729b88a164e8715129c4efc749, type: 3}
-      propertyPath: _layer.m_Bits
-      value: 8192
-      objectReference: {fileID: 0}
     - target: {fileID: 1114313991, guid: 636b20729b88a164e8715129c4efc749, type: 3}
       propertyPath: _points.Array.data[0]
       value: 
@@ -22284,6 +22280,11 @@ PrefabInstance:
       propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 781922072}
+    - target: {fileID: 301077290516147455, guid: f9e68fb86d3504146bfdb45a30aa3fd2,
+        type: 3}
+      propertyPath: _throwCooldown._value
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 992880115786021334, guid: f9e68fb86d3504146bfdb45a30aa3fd2,
         type: 3}
       propertyPath: _prefab

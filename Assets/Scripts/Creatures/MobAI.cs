@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using Platformer.Components;
+using System;
 
 namespace Platformer.Creatures
 {
@@ -47,10 +48,18 @@ namespace Platformer.Creatures
 
         private IEnumerator AgroToHero()
         {
+            LookAtHero();
             _particles.Spawn("Exclamation");
             yield return new WaitForSeconds(_alarmDelay);
 
             StartState(GoToHero());
+        }
+
+        private void LookAtHero()
+        {
+            var direction = GetDirectionToTarget();
+            _creature.SetDirection(Vector2.zero);
+            _creature.UpdateSpriteDirection(direction);
         }
 
         private IEnumerator GoToHero()
@@ -69,8 +78,11 @@ namespace Platformer.Creatures
                 yield return null;
             }
 
+            _creature.SetDirection(Vector2.zero);
             _particles.Spawn("MissHero");
             yield return new WaitForSeconds(_missHeroCooldown);
+
+            StartState(_patrol.DoPatrol());
         }
 
         private IEnumerator Attack()
@@ -86,9 +98,16 @@ namespace Platformer.Creatures
 
         private void SetDirectionToTarget()
         {
+            var direction = GetDirectionToTarget();
+            direction.y = 0;
+            _creature.SetDirection(direction);
+        }
+
+        private Vector2 GetDirectionToTarget()
+        {
             var direction = _target.transform.position - transform.position;
             direction.y = 0;
-            _creature.SetDirection(direction.normalized);
+            return direction.normalized;
         }
 
         private void StartState(IEnumerator coroutine)
@@ -106,6 +125,7 @@ namespace Platformer.Creatures
             _isDead = true;
             _animator.SetBool(IsDeadkKey, true);
 
+            _creature.SetDirection(Vector2.zero);
             if (_current != null)
                 StopCoroutine(_current);
         }

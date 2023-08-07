@@ -62,7 +62,7 @@ namespace Platformer
 
         private void OnEnable()
         {
-            _nextFrameTime = Time.time + _secPerFrame;
+            _nextFrameTime = Time.time;
         }
 
         private void Update()
