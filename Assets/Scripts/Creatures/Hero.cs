@@ -96,6 +96,11 @@ namespace Platformer.Creatures
         {
             _session.Data.Coin += coin;
             Debug.Log($"Вы нашли {coin} монет! Всего денег: {_session.Data.Coin}");
+        }        
+        
+        public void AddSword()
+        {
+            _session.Data.Swords += 1;
         }
 
         public override void TakeDamage()
@@ -141,6 +146,7 @@ namespace Platformer.Creatures
         public void ArmHero()
         {
             _session.Data.IsArmed = true;
+            _session.Data.Swords += 1;
             UpdateHeroWeapon();
         }
 
@@ -156,8 +162,11 @@ namespace Platformer.Creatures
 
         public void Throw()
         {
-            if (_throwCooldown.IsReady)
+            if (!_session.Data.IsArmed) return;
+
+            if (_throwCooldown.IsReady && _session.Data.Swords > 1)
             {
+                _session.Data.Swords -= 1;
                 Animator.SetTrigger(ThrowKey);
                 _throwCooldown.Reset();
             }

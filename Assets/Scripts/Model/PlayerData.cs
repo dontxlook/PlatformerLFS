@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Platformer.Model
@@ -11,6 +9,7 @@ namespace Platformer.Model
         public int Coin;
         public int Hp;
         public bool IsArmed;
+        public int Swords;
 
         public PlayerData Clone()
         {
