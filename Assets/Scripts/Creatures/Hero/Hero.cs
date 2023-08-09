@@ -92,11 +92,11 @@ namespace Platformer.Creatures
             return base.CalculateJumpVelocity(yVelocity); ;
         }
 
-        public void AddCoins(int coin)
+/*        public void AddCoins(int coin)
         {
             _session.Data.Coin += coin;
             Debug.Log($"Вы нашли {coin} монет! Всего денег: {_session.Data.Coin}");
-        }        
+        }     */   
         
         public void AddSword()
         {

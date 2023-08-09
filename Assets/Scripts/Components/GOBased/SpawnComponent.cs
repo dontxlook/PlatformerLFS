@@ -16,6 +16,7 @@ namespace Platformer
             
             var scale = _target.lossyScale;
             instantiate.transform.localScale = scale;
+            instantiate.SetActive(true);
         }
     }
 
