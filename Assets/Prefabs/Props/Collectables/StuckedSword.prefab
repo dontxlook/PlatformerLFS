@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1713268244636665749}
   - component: {fileID: 7614028479661077569}
   - component: {fileID: 2322606117200837492}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: StuckedSword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,9 +159,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.041748837, y: 0}
+  m_Offset: {x: -0.095074445, y: -0.061529487}
   serializedVersion: 2
-  m_Radius: 0.20116974
+  m_Radius: 0.21210846
 --- !u!114 &7614028479661077569
 MonoBehaviour:
   m_ObjectHideFlags: 0

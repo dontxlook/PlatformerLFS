@@ -1,7 +1,6 @@
-﻿using System.Collections;
+﻿using Platformer.Components;
+using System.Collections;
 using UnityEngine;
-using Platformer.Components;
-using System;
 
 namespace Platformer.Creatures
 {
@@ -40,7 +39,7 @@ namespace Platformer.Creatures
 
         public void OnHeroInVision(GameObject gameObject)
         {
-            if (_isDead) return; 
+            if (_isDead) return;
 
             _target = gameObject;
             StartState(AgroToHero());
@@ -89,7 +88,7 @@ namespace Platformer.Creatures
         {
             while (_canAttack.IsTouchingLayer)
             {
-                _creature.Attack(); 
+                _creature.Attack();
                 yield return new WaitForSeconds(_attackCooldown);
             }
 

@@ -11,8 +11,8 @@ namespace Platformer.Creatures
     {
         [SerializeField] private CheckCircleOverlap _interactionCheck;
         [SerializeField] private LayerCheck _wallcheck;
-
-        [SerializeField] private float _interactionRadius;
+/*
+        [SerializeField] private float _interactionRadius;*/
 
         [SerializeField] private Cooldown _throwCooldown;
         [SerializeField] private AnimatorController _armed; 
@@ -22,6 +22,7 @@ namespace Platformer.Creatures
         private ParticleSystem _hitParticles;
 
         private static readonly int ThrowKey = Animator.StringToHash("throw");
+        private static readonly int isOnWall = Animator.StringToHash("is-on-wall");
 
         private bool _allowDoubleJump;
         private bool _isOnWall;
@@ -53,7 +54,9 @@ namespace Platformer.Creatures
         protected override void Update()
         {
             base.Update();
-            if (_wallcheck.IsTouchingLayer && Direction.x == transform.localScale.x)
+
+            var moveToSameDirection = Direction.x * transform.lossyScale.x > 0;
+            if (_wallcheck.IsTouchingLayer && moveToSameDirection)
             {
                 _isOnWall = true;
                 Rigidbody.gravityScale = 0;
@@ -63,6 +66,8 @@ namespace Platformer.Creatures
                 _isOnWall = false;
                 Rigidbody.gravityScale = _defaultGravityScale;
             }
+
+            Animator.SetBool(isOnWall, _isOnWall);
         }
 
         protected override float CalculateYVelocity()
@@ -83,7 +88,7 @@ namespace Platformer.Creatures
 
         protected override float CalculateJumpVelocity(float yVelocity)
         {
-            if (!IsGrounded && _allowDoubleJump)
+            if (!IsGrounded && _allowDoubleJump && !_isOnWall)
             {
                 _particles.Spawn("Jump");
                 _allowDoubleJump = false;
