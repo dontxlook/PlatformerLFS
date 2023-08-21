@@ -10,11 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 6693805710604834272}
   - component: {fileID: 6693805710604834275}
+  - component: {fileID: 138861673536178834}
   - component: {fileID: 6693805710604834273}
   - component: {fileID: 6693805710604834278}
   - component: {fileID: 6693805710604834279}
   - component: {fileID: 6693805710604834282}
   - component: {fileID: 1960155610389066309}
+  - component: {fileID: 4525124852712213389}
   m_Layer: 14
   m_Name: Silver Coin
   m_TagString: SilverCoin
@@ -87,6 +89,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &138861673536178834
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6693805710604834274}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!58 &6693805710604834273
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -216,3 +239,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cost: 5
+--- !u!114 &4525124852712213389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6693805710604834274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89ff5e13493915547aea5353149af1dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frequency: 6
+  _amplitude: 0.1
+  _randomize: 1
