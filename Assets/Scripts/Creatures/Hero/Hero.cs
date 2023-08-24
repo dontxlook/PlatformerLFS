@@ -4,13 +4,14 @@ using UnityEditor.Animations;
 using Platformer.Components;
 using Platformer.Model;
 using Platformer.Utils;
+using Platformer.Components.ColliderBased;
 
 namespace Platformer.Creatures
 {
     public class Hero : Creature
     {
         [SerializeField] private CheckCircleOverlap _interactionCheck;
-        [SerializeField] private LayerCheck _wallcheck;
+        [SerializeField] private ColliderCheck _wallcheck;
 /*
         [SerializeField] private float _interactionRadius;*/
 

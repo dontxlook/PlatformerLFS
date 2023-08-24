@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Platformer.Components;
+using Platformer.Components.ColliderBased;
 
 namespace Platformer.Creatures
 {
@@ -16,7 +17,7 @@ namespace Platformer.Creatures
         [SerializeField] private bool _invertScale; 
 
         [Header("Checkers")]
-        [SerializeField] private LayerCheck _groundCheck;
+        [SerializeField] private ColliderCheck _groundCheck;
         [SerializeField] private CheckCircleOverlap _attackRange;
         [SerializeField] protected SpawnListComponent _particles;
 

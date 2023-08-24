@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 743707692459192054}
   - component: {fileID: 743707692459192058}
   - component: {fileID: 132844743}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DropDestructableBarrel
   m_TagString: Enemy
   m_Icon: {fileID: 0}

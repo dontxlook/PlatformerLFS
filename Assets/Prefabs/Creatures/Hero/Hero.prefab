@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1093768436}
   - component: {fileID: 1093768437}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: SwordSlashPosition
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 1093768436}
-  _prefab: {fileID: 2985325612231879077, guid: a441ae8cc09e71a4aad8cd1e6488f43f, type: 3}
+  _prefab: {fileID: 5023328502870905237, guid: 6493a4572b312cc4b9997d94626210e0, type: 3}
 --- !u!1 &1181352292
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 1181352293}
   - component: {fileID: 1181352295}
   - component: {fileID: 1181352294}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 1597980012}
   - component: {fileID: 1597980015}
   - component: {fileID: 1597980013}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: InteractionCheck
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -195,7 +195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 301077289536676655}
   - component: {fileID: 301077289536676654}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: FootstepsPosition
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -240,7 +240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 301077289587707171}
   - component: {fileID: 301077289587707170}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: JumpPosition
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 301077289755490093}
   - component: {fileID: 301077289755490091}
   - component: {fileID: 301077289755490092}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 301077290407272363}
   - component: {fileID: 301077290407272364}
   - component: {fileID: 301077290407272365}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5237,7 +5237,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 737897447
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0415e1b61a91f33489497cb3c56301ba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5388,7 +5388,7 @@ Animator:
   m_GameObject: {fileID: 301077290516147394}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a8af52e217518b64ab2aace284e695a3, type: 2}
+  m_Controller: {fileID: 9100000, guid: 07bd6e9cb8a442b43afd9341da44da07, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5419,7 +5419,8 @@ MonoBehaviour:
   _particles: {fileID: 4258586470301367729}
   _interactionCheck: {fileID: 1597980015}
   _wallcheck: {fileID: 1181352295}
-  _interactionRadius: 1
+  _throwCooldown:
+    _value: 0.4
   _armed: {fileID: 9100000, guid: a8af52e217518b64ab2aace284e695a3, type: 2}
   _disarmed: {fileID: 9100000, guid: 07bd6e9cb8a442b43afd9341da44da07, type: 2}
   _hitParticles: {fileID: 301077290407272364}
@@ -5527,7 +5528,7 @@ MonoBehaviour:
   - Id: Slash
     Component: {fileID: 1093768437}
   - Id: Throw
-    Component: {fileID: 1093768437}
+    Component: {fileID: 992880115786021334}
 --- !u!1 &301077290770327457
 GameObject:
   m_ObjectHideFlags: 0
@@ -5538,7 +5539,7 @@ GameObject:
   m_Component:
   - component: {fileID: 301077290770327456}
   - component: {fileID: 301077290770327519}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: FallPosition
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -5585,7 +5586,7 @@ GameObject:
   - component: {fileID: 301077290913916325}
   - component: {fileID: 301077290913916324}
   - component: {fileID: 841323274}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: AttackPosition
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -5621,7 +5622,7 @@ MonoBehaviour:
   _radius: 0.27
   _mask:
     serializedVersion: 2
-    m_Bits: 7991
+    m_Bits: 139063
   _tags:
   - Enemy
   _onOverlap:
@@ -5675,7 +5676,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3224453328041644773}
   - component: {fileID: 992880115786021334}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: ThrowSwordSpawnPosition
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -5690,7 +5691,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7508944922506093959}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.383, y: -0.04, z: 0}
+  m_LocalPosition: {x: 0.383, y: 0.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 301077290516147392}
@@ -5709,4 +5710,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 3224453328041644773}
-  _prefab: {fileID: 5597225967728289308, guid: 40a2f2c7b387bd54698448a2fddfae01, type: 3}
+  _prefab: {fileID: 2985325612231879077, guid: a441ae8cc09e71a4aad8cd1e6488f43f, type: 3}
